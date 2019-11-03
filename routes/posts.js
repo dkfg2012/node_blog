@@ -5,7 +5,7 @@ const checkLogin = require("../middlewares/check.js").checkLogin
 
 //get post publish by someone or any post
 router.get('/', function(req, res, next){
-	res.send("main")
+	res.send("main hello")
 })
 
 //create post
@@ -27,5 +27,15 @@ router.get('/:postId', function(req, res, next){
 
 //go to the page of editing post
 router.get('/:postId/edit', checkLogin, function(req, res, next){
+	res.send('edit post page')
+})
+
+router.post('/:postId/edit', checkLogin, function(req, res, next){
 	res.send('edit post')
 })
+
+router.get('/:postId/remove', checkLogin, function(req, res, next){
+	res.send('delete post')
+})
+
+module.exports = router
