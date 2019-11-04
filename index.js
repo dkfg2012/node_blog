@@ -31,7 +31,6 @@ app.use(session({
 
 app.use(flash())
 
-<<<<<<< HEAD
 //load constant, used for rendering ejs
 app.locals.blog = {
 	title: pkg.name,
@@ -46,7 +45,6 @@ app.use(function(req, res, next){
 	next()
 })
 
-//hi
 routes(app)
 
 app.listen(config.port, function(){
