@@ -46,9 +46,20 @@ app.use(function(req, res, next){
 	next()
 })
 
+// 设置模板全局常量
+app.locals.blog = {
+  title: pkg.name,
+  description: pkg.description
+}
 
-=======
->>>>>>> 78b06b0e53ee86ee8fb77acc65cec5e102f99f89
+// 添加模板必需的三个变量
+app.use(function (req, res, next) {
+  res.locals.user = req.session.user
+  res.locals.success = req.flash('success').toString()
+  res.locals.error = req.flash('error').toString()
+  next()
+})
+
 routes(app)
 
 app.listen(config.port, function(){
