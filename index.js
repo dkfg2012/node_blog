@@ -46,6 +46,7 @@ app.use(function(req, res, next){
 	next()
 })
 
+//hi
 routes(app)
 
 app.listen(config.port, function(){
