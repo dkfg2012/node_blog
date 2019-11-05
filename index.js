@@ -31,6 +31,12 @@ app.use(session({
 
 app.use(flash())
 
+//middleware responsible for file upload
+app.use(require('express-formidable')({
+	uploadDir: path.join(__dirname, 'public/img'),
+	keepExtensions: true //keep file suffix, the .txt , .jpg one
+}))
+
 //load constant, used for rendering ejs
 app.locals.blog = {
 	title: pkg.name,
@@ -48,5 +54,5 @@ app.use(function(req, res, next){
 routes(app)
 
 app.listen(config.port, function(){
-	console.log('${pkg.name} listening on port ${config.port}')
+	console.log('running')
 })
