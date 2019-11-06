@@ -5,7 +5,7 @@ const checkLogin = require("../middlewares/check.js").checkLogin
 
 //get post publish by someone or any post
 router.get('/', function(req, res, next){
-	res.send("main hello")
+	res.render('posts')
 })
 
 //create post
