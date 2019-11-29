@@ -8,7 +8,7 @@ const routes = require('./routes') //refer to the index file in routes folder
 const pkg = require('./package')
 
 const app = express()
-
+ 
 //set view file directory
 app.set('views', path.join(__dirname, 'views'))
 //set view engine
